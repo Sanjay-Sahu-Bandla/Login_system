@@ -41,6 +41,24 @@ if($login != 'success') {
 	<!-- customized js -->
 	<script type="text/javascript" language="javascript" src="comments.json"></script>
 
+	<style type="text/css">
+		
+		.btn {
+			border: none !important;
+			outline: none !important;
+		}
+
+		a.nav-link {
+			background: #fff;
+			color: #6c757d;
+		}
+		a.nav-link.active {
+			background: #fff !important;
+			color: #007bff !important;
+		}
+
+	</style>
+
 </head>
 <body class="">
 
@@ -409,14 +427,14 @@ if($login != 'success') {
 			$('#admin_data').on('submit', function(e){
 				e.preventDefault();
 				$.ajax({  
-		        type: "POST",
-		        url: "operations.php",
-				data: $('form').serialize(),
-		        success: function(data){                    
-		            $('#message').html(data);
-		        }
+					type: "POST",
+					url: "operations.php",
+					data: $('form').serialize(),
+					success: function(data){                    
+						$('#message').html(data);
+					}
 
-		    });
+				});
 			});
 
 			$.getJSON( "comments.json", function(obj) {
